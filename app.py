@@ -45,7 +45,8 @@ def calc_divide(num1, num2):
 
 
 # Part 2 of task
-@app.route('/calc/web/sum?number=<int:num>&number=<int:num>/')
-def calc_sum(arg1, arg2):
-    sum(n1+n2)
-    return str(sum), 200
+@app.route('/calc/web/sum?number=<int:num1>&number=<int:num2>/')
+def calc_sum(num1, num2):
+    print("here")
+    Sum = num1 + num2
+    return str(Sum), 200
