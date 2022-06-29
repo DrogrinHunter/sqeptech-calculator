@@ -17,6 +17,8 @@ def calc_page():
 def calc_web_page():
     return "You've reached here"
 
+# Part 1 of task
+
 
 @app.route('/calc/web/add/<int:num1>/to/<int:num2>/')
 def calc_addition(num1, num2):
@@ -39,4 +41,12 @@ def calc_multiply(num1, num2):
 @app.route('/calc/web/divide/<int:num1>/by/<int:num2>/')
 def calc_divide(num1, num2):
     sum = num1 / num2
+    return str(sum), 200
+
+
+# Part 2 of task
+@app.route('/calc/web/sum?number=<int:num>&number=<int:num>/')
+def calc_sum(arg1, arg2):
+    
+    sum(n1+n2)
     return str(sum), 200
