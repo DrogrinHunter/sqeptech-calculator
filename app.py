@@ -40,7 +40,7 @@ def calc_multiply(num1, num2):
 
 @app.route('/calc/web/divide/<int:num1>/by/<int:num2>/')
 def calc_divide(num1, num2):
-    sum = num1 / num2
+    sum = (num1 / num2)
     return str(sum), 200
 
 
