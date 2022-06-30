@@ -1,10 +1,17 @@
 Part 1 – Arithmetic operations on two numbers
+
 Questions
     1. What happens when we call /calc/web/divide/10/by/4 ?
-        a. Is the answer accurate (enough)? The app calculates it to be 2.5 - checking this against a calculator, it provides the correct number.
-        b. Can we make it more accurate? No/
+
+        a. Is the answer accurate (enough)? 
+        The app calculates it to be 2.5 - checking this against a calculator, it provides the correct number.
+        
+        b. Can we make it more accurate? 
+        No
+
     2. What happens when we call /calc/web/divide/7/by/0 ?
-        a. How can we handle this in a more user-friendly manner? This would bring back undefined or error on a normal calculator however on this app, it brings back a 500 response (as it's in debug mode). In the terminal, it brings up the error "ZeroDivisionError: division by zero". To make this a more user-friendly view, I would create specific error pages to display a prettier look for the users so they don't think that it's broken or untrustable.
+        a. How can we handle this in a more user-friendly manner? 
+        This would bring back undefined or error on a normal calculator however on this app, it brings back a 500 response (as it's in debug mode). In the terminal, it brings up the error "ZeroDivisionError: division by zero". To make this a more user-friendly view, I would create specific error pages to display a prettier look for the users so they don't think that it's broken or untrustable.
 
 Optional bonuses
     1. Fix any problems identified by the questions above
