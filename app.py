@@ -46,7 +46,7 @@ def calc_divide(num1, num2):
 
 
 # Part 2 of task
-@app.route('/calc/web/sum?number=<int:number>&number=<int:number>/')
+@app.route('/calc/web/sum?number=<float:number>&number=<float:number>/')
 def calc_sum(number):
     if not request.json:
         abort(400)
@@ -61,8 +61,23 @@ def calc_sum(number):
         abort(400)
 
 
-@app.route('/calc/web/mean?number=<int:number>&number=<int:number>/')
-def calc_sum(number):
+@app.route('/calc/web/product?number=<float:number>&number=<float:number>/')
+def calc_product(number):
+    if not request.json:
+        abort(400)
+    try:
+        params = request.args.to_dict(flat=False)
+        p = params['number']
+        total = 0
+        for total_number in p:
+            total = total * total_number
+        return str(total), 200
+    except KeyError:
+        abort(400)
+
+
+@app.route('/calc/web/mean?number=<float:number>&number=<float:number>/')
+def calc_mean(number):
     if not request.json:
         abort(400)
     try:

@@ -21,11 +21,12 @@ Optional bonuses
 
 
 Part 2 – Arithmetic operations on more than two numbers
+    Unfortunately, the endpoints do not seem to run - I have put the code through a PEP8 validator to ensure that there are no errors however I'm not able to get it running correctly.
 Questions:
     1. Does the calc/web/mean endpoint return an accurate (enough) answer?
-        a. Can we make it more accurate?
+        a. Can we make it more accurate? If running, I believe that it would provide an accurate figure, this is because I used "float" instead of "int" against the number - this returns the value including decimals whereas "int" returns a whole number.
     2. What happens when we supply decimal numbers as parameters to these endpoints?
-        a. If the app does not return the correct answer, how can we fix this?
+        a. If the app does not return the correct answer, how can we fix this? To correct the app not running, I believe the issue is to do with the app.route as it's bringing back a 404 error regardless of what I code for the function.
 
 Optional Bonus:
 1.	Fix any problems identified by the questions above.
@@ -47,7 +48,7 @@ Optional Bonus:
 Part 4 – Return a JSON response
 Questions:
     1. It would be nice to have the option to use the calculator in either “Web” mode where the result is returned as a string or “API” mode where the result is returned as JSON in the response body. In practice this functionality is often achieved by varying the URL, for example /calc/web/add/1/to/7 or calc/api/add/1/to/7.
-        a. How could this be implemented without needing to create any additional endpoints or functions within the Flask app?
+        a. How could this be implemented without needing to create any additional endpoints or functions within the Flask app? We could look to use Flask_Restful with putting methods into the app.route to advise whether the function will be pushing information / data out or retrieving information / data in. 
 
 
 Optional Bonus:
