@@ -1,6 +1,7 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify, abort
 
 app = Flask(__name__)
+app.run(debug=True)
 
 
 @app.route('/')
@@ -45,8 +46,31 @@ def calc_divide(num1, num2):
 
 
 # Part 2 of task
-@app.route('/calc/web/sum?number=<int:num1>&number=<int:num2>/')
-def calc_sum(num1, num2):
-    print("here")
-    Sum = num1 + num2
-    return str(Sum), 200
+@app.route('/calc/web/sum?number=<int:number>&number=<int:number>/')
+def calc_sum(number):
+    if not request.json:
+        abort(400)
+    try:
+        params = request.args.to_dict(flat=False)
+        p = params['number']
+        total = 0
+        for total_number in p:
+            total = total + total_number
+        return str(total), 200
+    except KeyError:
+        abort(400)
+
+
+@app.route('/calc/web/mean?number=<int:number>&number=<int:number>/')
+def calc_sum(number):
+    if not request.json:
+        abort(400)
+    try:
+        params = request.args.to_dict(flat=False)
+        p = params['number']
+        total = 0
+        for total_number in p:
+            total = (total * total_number) / p
+        return str(total), 200
+    except KeyError:
+        abort(400)
